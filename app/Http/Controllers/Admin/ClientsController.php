@@ -38,7 +38,7 @@ class ClientsController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $data['defaulter'] = 0;
+        $data['defaulter'] = $request->has('defaulter');
         Client::create($data);
         return redirect()->to('/admin/clients');
     }

@@ -4,7 +4,7 @@
 
 <div class="container">
     <h3>Clients List</h3>
-    <br /><br />
+    <a href="/admin/clients/create" class="btn btn-primary">New Client</a>
     <table class="table table-striped">
     	<thead>
     		<tr>
@@ -29,6 +29,8 @@
     			<td>{{ $client->phone }}</td>
     			<td>{{ $client->sex }}</td>
     			<td>
+    				<a href="#" class="btn btn-sm btn-info">Edit</a>
+    				<a href="#" class="btn btn-sm btn-danger">Delete</a>
     			</td>
     		</tr>
     	@endforeach
