@@ -23,7 +23,8 @@ $factory->state(Client::class, Client::TYPE_PERSON_PHYSICAL, function (Faker $fa
         'document_number' => $cpfs[array_rand($cpfs, 1)],
         'sex' => rand(1,10) % 2 == 0 ? 'm' : 'f',
         'marital_status' => rand(1, 3),
-        'physical_disability' => rand(1, 10) % 2 == 0 ? $faker->word : null
+        'physical_disability' => rand(1, 10) % 2 == 0 ? $faker->word : null,
+        'client_type' => Client::TYPE_PERSON_PHYSICAL
     ];
 });
 
@@ -31,6 +32,7 @@ $factory->state(Client::class, Client::TYPE_PERSON_COMMPANY, function (Faker $fa
     $cnpjs = cnpjs();
     return [
         'document_number' => $cnpjs[array_rand($cnpjs, 1)],
-        'company_name' => $faker->company
+        'company_name' => $faker->company,
+        'client_type' => Client::TYPE_PERSON_COMMPANY
     ];
 });
