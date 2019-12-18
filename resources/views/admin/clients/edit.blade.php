@@ -13,6 +13,7 @@
     @endif
 	<form action="{{ route('clients.update', ['client'=>$client->id]) }}" method="post">
 		{{csrf_field()}}
+		{{method_field('PUT')}}
 		<div class="form-group">
 			<label for="name">Name</label>
 			<input  class="form-control" id="name" name="name" value="{{$client->name}}" />
@@ -33,9 +34,9 @@
 			<label for="marital_status">Marital status</label>
 			<select class="form-control" name="marital_status" id="marital_status" value="{{$client->status}}" >
 				<option value="">Select marital status</option>
-				<option value="1">Single</option>
-				<option value="2">Merried</option>
-				<option value="3">Divorced</option>
+				<option value="1" {{$client->marital_status == 1 ?'selected="selected"':''}}>Single</option>
+				<option value="2" {{$client->marital_status == 2 ?'selected="selected"':''}}>Merried</option>
+				<option value="3" {{$client->marital_status == 3 ?'selected="selected"':''}}>Divorced</option>
 			</select>
 		</div>
 		<div class="form-group">
