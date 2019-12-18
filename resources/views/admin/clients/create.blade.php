@@ -4,7 +4,7 @@
 
 <div class="container">
     <h3>New Client</h3>
-	<form action="/admin/clients" method="post">
+	<form action="{{ route('clients.store') }}" method="post">
 		{{csrf_field()}}
 		<div class="form-group">
 			<label for="name">Name</label>

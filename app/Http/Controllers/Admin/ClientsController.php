@@ -37,12 +37,25 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
+        $maritalStatus = implode(',', array_keys(Client::MARITAL_STATUS));
+        $this->validate($request, [
+            'name'=>'required|regex:/^[\pL\s\-]+$/u|max:255',
+            'document_number'=>'required',
+            'email'=>'required|email:rfc,dns',
+            'phone'=>'required',
+//             'defaulter'=>'required',
+            'date_birth'=>'required|date',
+            'sex'=>'required|in:m,f',
+            'marital_status'=>"required|in:$maritalStatus",
+            'physical_disability'=>'max:255'
+            
+        ]);
         $data = $request->all();
         $data['defaulter'] = $request->has('defaulter');
         Client::create($data);
         return redirect()->to('/admin/clients');
     }
-
+    
     /**
      * Display the specified resource.
      *

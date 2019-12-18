@@ -1,10 +1,8 @@
 @extends('layouts.layout')
 
 @section('content')
-
-<div class="container">
     <h3>Clients List</h3>
-    <a href="/admin/clients/create" class="btn btn-primary">New Client</a>
+    <a href="{{ route('clients.create') }}" class="btn btn-primary">New Client</a>
     <table class="table table-striped">
     	<thead>
     		<tr>
@@ -36,5 +34,4 @@
     	@endforeach
     	</tbody>
     </table>
-</div>
 @endsection
