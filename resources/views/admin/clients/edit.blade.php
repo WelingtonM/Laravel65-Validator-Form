@@ -8,7 +8,7 @@
 	<form action="{{ route('clients.update', ['client'=>$client->id]) }}" method="post">
 		{{method_field('PUT')}}
 		@include('admin.clients._form')
-		<button type="submit" class="btn btn-defaul">Update & Save</button>
+		<button type="submit" class="btn btn-primary">Update & Save</button>
 	</form>
 </div>
 @endsection
