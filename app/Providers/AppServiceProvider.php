@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \Schema::defaultStringLength(191);
+        $platform = \Schema::getConnection()->getDoctrineSchemaManager()->getDatabasePlatform();
+        $platform->registerDoctrineTypeMapping('enum','string');
     }
 }

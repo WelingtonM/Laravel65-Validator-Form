@@ -8,10 +8,11 @@
 	],
 	"license" : "MIT",
 	"require" : {
-		"php" : "^7.2",
-		"fideloper/proxy" : "^4.0",
-		"laravel/framework" : "6.5.*",
-		"laravel/tinker" : "^1.0"
+		"php": "^7.2",
+		"doctrine/dbal": "2.7",
+		"fideloper/proxy": "^4.0",
+		"laravel/framework": "6.5.*",
+		"laravel/tinker": "^1.0"
 	},
 	"require-dev" : {
 		"facade/ignition" : "^1.4",
@@ -27,7 +28,6 @@
 		"preferred-install" : "dist",
 		"sort-packages" : true
 	},
-	"extra" : {},
 	"autoload" : {
 		"psr-4" : {
 			"App\\" : "app/"

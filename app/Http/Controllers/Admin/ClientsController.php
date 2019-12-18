@@ -58,7 +58,7 @@ class ClientsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $client
+     * @param  \App\Client $client
      * @return \Illuminate\Http\Response
      */
     public function edit(Client $client)
