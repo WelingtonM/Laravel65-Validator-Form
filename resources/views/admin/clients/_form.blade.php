@@ -59,3 +59,4 @@
 		{{old('defaulter',$client->defaulter)?'checked="checked"':''}}/>Defaulter?
 	</label>
 </div>
+<a href="{{ route('clients.index') }}" class="btn btn-secondary">Back</a>

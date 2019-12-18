@@ -7,7 +7,7 @@
   	@include('errors._forms_error')
 	<form action="{{ route('clients.store') }}" method="post">
 		@include('admin.clients._form')
-		<button type="submit" class="btn btn-defaul">Create and save</button>
+		<button type="submit" class="btn btn-primary">Create and save</button>
 	</form>
 </div>
 @endsection

@@ -2,17 +2,15 @@
 
 @section('content')
     <h3>Clients List</h3>
-    <a href="{{ route('clients.create') }}" class="btn btn-primary">New Client</a>
-    <table class="table table-striped">
-    	<thead>
+    <a href="{{ route('clients.create') }}" class="btn btn-primary">New Client</a><br /><br />
+    <table class="table table-striped table-dark">
+    	<thead class="thead-dark">
     		<tr>
     			<th>ID</th>
     			<th>Name</th>
     			<th>CNPJ/CPF</th>
     			<th>Date Birth</th>
     			<th>E-mail</th>
-    			<th>Tel.</th>
-    			<th>Sexo</th>
     			<th>Action</th>
     		</tr>
     	</thead>
@@ -24,10 +22,10 @@
     			<td>{{ $client->document_number }}</td>
     			<td>{{ $client->date_birth }}</td>
     			<td>{{ $client->email }}</td>
-    			<td>{{ $client->phone }}</td>
-    			<td>{{ $client->sex }}</td>
+
     			<td>
     				<a href="{{route('clients.edit', ['client'=>$client->id])}}" class="btn btn-sm btn-info">Edit</a>
+    				<a href="{{route('clients.show', ['client'=>$client->id])}}" class="btn btn-sm btn-success">Show</a>
     				<a href="{{route('clients.destroy', ['client'=>$client->id])}}" class="btn btn-sm btn-danger">Delete</a>
     			</td>
     		</tr>
