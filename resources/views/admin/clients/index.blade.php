@@ -27,8 +27,8 @@
     			<td>{{ $client->phone }}</td>
     			<td>{{ $client->sex }}</td>
     			<td>
-    				<a href="#" class="btn btn-sm btn-info">Edit</a>
-    				<a href="#" class="btn btn-sm btn-danger">Delete</a>
+    				<a href="{{route('clients.edit', ['client'=>$client->id])}}" class="btn btn-sm btn-info">Edit</a>
+    				<a href="{{route('clients.destroy', ['client'=>$client->id])}}" class="btn btn-sm btn-danger">Delete</a>
     			</td>
     		</tr>
     	@endforeach
