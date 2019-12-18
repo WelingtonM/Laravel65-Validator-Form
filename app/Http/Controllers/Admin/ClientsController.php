@@ -86,12 +86,13 @@ class ClientsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Client $client)
     {
-        //
+        $client->delete();
+        return redirect()->route('clients.index');
     }
     
     protected function _validate(Request $request) 

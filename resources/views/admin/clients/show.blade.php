@@ -4,7 +4,18 @@
 <h3>Client : {{$client->name}}</h3>
 <br /><br />
 <a href="{{ route('clients.index') }}" class="btn btn-secondary">Back</a>
-<a href="{{route('clients.edit', ['client'=>$client->id])}}" class="btn btn-info">Edit client</a><br /><br />
+<a href="{{route('clients.edit', ['client'=>$client->id])}}" class="btn btn-info">Edit client</a>
+<a href="{{route('clients.destroy', ['client'=>$client->id])}}" 
+	class="btn btn-danger"
+	onclick="event.preventDefault();if(confirm('Do you want to delete this client?')){document.getElementById('form-delete').submit();}">Delete client</a>
+<form action="{{route('clients.destroy', ['client'=>$client->id])}}"
+	id="form-delete" 
+	style="display: none;" 
+	method="post">
+	 {{csrf_field()}} 
+	 {{method_field('DELETE')}}
+</form>
+<br /><br />
 <table class="table table-striped table-dark">
 	<tbody>
 		<tr>
